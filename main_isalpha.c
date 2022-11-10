@@ -6,7 +6,7 @@ int main(int argc, char **argv)
 {
     if (argc > 1)
     {
-        printf("%d", ft_isalpha(10));
+        printf("sortie: %d\n", ft_isalpha(*argv[1]));
     }
     return (0);
 }
