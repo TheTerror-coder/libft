@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jfaye <jfaye@student.42lyon.fr>            +#+  +:+       +#+        */
+/*   By: aviscogl <aviscogl@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/10 19:09:38 by jfaye             #+#    #+#             */
-/*   Updated: 2022/11/10 19:11:04 by jfaye            ###   ########lyon.fr   */
+/*   Created: 2022/11/11 16:06:44 by aviscogl          #+#    #+#             */
+/*   Updated: 2022/11/11 16:06:44 by aviscogl         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(int c)
+void	*ft_memset(void *s, int c, unsigned int n)
 {
-	if (c >= 0 && c <= 127)
-		return (1);
-	return (0);
+	unsigned int	i;
+	int				*p;
+
+	i = 0;
+	while (i < n)
+	{
+		p = s + i;
+		*p = c;
+		i++;
+	}
 }
