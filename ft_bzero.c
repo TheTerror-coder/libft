@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/11 15:00:44 by TheTerror         #+#    #+#             */
-/*   Updated: 2022/11/11 15:00:44 by TheTerror        ###   ########lyon.fr   */
+/*   Created: 2022/11/11 21:58:31 by TheTerror         #+#    #+#             */
+/*   Updated: 2022/11/11 21:58:31 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(int c)
+void	ft_bzero(void *s, unsigned int n)
 {
-	if (c >= 32 && c <= 126)
-		return (1);
-	return (0);
+	unsigned int	i;
+	char			*p;
+
+	i = 0;
+	p = s;
+	while (i < n)
+	{
+		*p = 0;
+		i++;
+	}
 }

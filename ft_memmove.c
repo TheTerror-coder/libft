@@ -1,18 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/11 15:00:44 by TheTerror         #+#    #+#             */
-/*   Updated: 2022/11/11 15:00:44 by TheTerror        ###   ########lyon.fr   */
+/*   Created: 2022/11/13 23:27:19 by TheTerror         #+#    #+#             */
+/*   Updated: 2022/11/13 23:27:19 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(int c)
+void	*ft_memmove(void *dest, const void *src, unsigned int n)
 {
-	if (c >= 32 && c <= 126)
-		return (1);
-	return (0);
+	unsigned int	i;
+	const char		*psrc;
+	char			*pdest;
+	char			tmp[n];
+
+	i = 0;
+	psrc = src;
+	pdest = dest;
+	while (i < n)
+	{
+		tmp[i] = *(psrc + i);
+		i++;
+	}
+	while (i > 0, i--)
+		*(pdest + i) = tmp[i];
+	return ((void *) dest);
 }

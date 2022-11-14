@@ -1,18 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/11 15:00:44 by TheTerror         #+#    #+#             */
-/*   Updated: 2022/11/11 15:00:44 by TheTerror        ###   ########lyon.fr   */
+/*   Created: 2022/11/11 22:19:30 by TheTerror         #+#    #+#             */
+/*   Updated: 2022/11/11 22:19:30 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(int c)
+void	*ft_memcpy(void *dest, const void *src, unsigned int n)
 {
-	if (c >= 32 && c <= 126)
-		return (1);
-	return (0);
+	unsigned int	i;
+	const char		*psrc;
+	char			*pdest;
+
+	i = 0;
+	psrc = src;
+	pdest = dest;
+	while (i < n)
+	{
+		*(pdest + i) = *(psrc + i);
+		i++;
+	}
+	return ((void*) dest);
 }

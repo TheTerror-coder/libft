@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aviscogl <aviscogl@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/10 16:20:44 by aviscogl          #+#    #+#             */
-/*   Updated: 2022/11/10 16:20:44 by aviscogl         ###   ########lyon.fr   */
+/*   Created: 2022/11/10 16:20:44 by TheTerror         #+#    #+#             */
+/*   Updated: 2022/11/10 16:20:44 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
