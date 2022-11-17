@@ -1,25 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/11 21:58:31 by TheTerror         #+#    #+#             */
-/*   Updated: 2022/11/11 21:58:31 by TheTerror        ###   ########lyon.fr   */
+/*   Created: 2022/11/14 21:44:11 by TheTerror         #+#    #+#             */
+/*   Updated: 2022/11/14 21:44:11 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_bzero(void *s, unsigned int n)
+unsigned int	strlcat( char *dst, const char *src, unsigned int size)
 {
+	unsigned int	lndst;
+	unsigned int	lnsrc;
 	unsigned int	i;
-	char			*p;
+	unsigned int	j;
 
-	i = 0;
-	p = s;
-	while (i < n)
+	lndst = 0;
+	lnsrc = 0;
+	j = 0;
+	while (dst[lndst])
+		lndst++;
+	while (src[lnsrc])
+		lnsrc++;
+	if (size <= lndst)
+		return (lnsrc + lndst);
+	i = lndst;
+	while (i < size - 1 && src[j])
 	{
-		*(p + i) = 0;
+		dst[i] = src[j];
 		i++;
+		j++;
 	}
+	dst[i] = '\0';
+	return (lnsrc + lndst);
 }

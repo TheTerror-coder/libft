@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/11 21:58:31 by TheTerror         #+#    #+#             */
-/*   Updated: 2022/11/11 21:58:31 by TheTerror        ###   ########lyon.fr   */
+/*   Created: 2022/11/15 21:52:59 by TheTerror         #+#    #+#             */
+/*   Updated: 2022/11/15 21:52:59 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_bzero(void *s, unsigned int n)
+void	*ft_memchr(const void *s, int c, unsigned int n)
 {
+	const char		*p;
 	unsigned int	i;
-	char			*p;
 
 	i = 0;
 	p = s;
-	while (i < n)
+	while ((i < n) && p[i])
 	{
-		*(p + i) = 0;
+		if (p[i] == c)
+			return ((void *) &p[i]);
 		i++;
 	}
+	return (0);
 }

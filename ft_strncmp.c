@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/11 21:58:31 by TheTerror         #+#    #+#             */
-/*   Updated: 2022/11/11 21:58:31 by TheTerror        ###   ########lyon.fr   */
+/*   Created: 2022/11/15 21:25:08 by TheTerror         #+#    #+#             */
+/*   Updated: 2022/11/15 21:25:08 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_bzero(void *s, unsigned int n)
+int	ft_strncmp(const char *s1, const char *s2, unsigned int n)
 {
 	unsigned int	i;
-	char			*p;
+	int				feed;
 
 	i = 0;
-	p = s;
+	feed = 0;
 	while (i < n)
 	{
-		*(p + i) = 0;
+		feed = s1[i] - s2[i];
+		if (feed != 0)
+			return (feed);
 		i++;
 	}
+	return (feed);
 }

@@ -1,25 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/11 21:58:31 by TheTerror         #+#    #+#             */
-/*   Updated: 2022/11/11 21:58:31 by TheTerror        ###   ########lyon.fr   */
+/*   Created: 2022/11/17 19:58:18 by TheTerror         #+#    #+#             */
+/*   Updated: 2022/11/17 19:58:18 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_bzero(void *s, unsigned int n)
+char	*ft_strnstr(const char *s1, const char *s2, unsigned int len)
 {
 	unsigned int	i;
-	char			*p;
+	unsigned int	j;
+	unsigned int	k;
 
 	i = 0;
-	p = s;
-	while (i < n)
+	if (!s2[i])
+		return ((char *) s1);
+	while (i < len)
 	{
-		*(p + i) = 0;
-		i++;
+		j = 0;
+		if (s1[i] == s2[j])
+		{
+			k = i;
+			while (i < len && (s1[i] == s2[j]), i++)
+			{
+				j++;
+				if (s2[j] == '\0')
+					return ((char *) &s1[k]);
+			}
+		}
+		else
+			i++;
 	}
+	return (0);
 }

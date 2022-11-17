@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/11 21:58:31 by TheTerror         #+#    #+#             */
-/*   Updated: 2022/11/11 21:58:31 by TheTerror        ###   ########lyon.fr   */
+/*   Created: 2022/11/14 20:27:14 by TheTerror         #+#    #+#             */
+/*   Updated: 2022/11/14 20:27:14 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_bzero(void *s, unsigned int n)
+unsigned int	ft_strlcpy(char *dst, const char *src, unsigned int size)
 {
+	unsigned int	lnsrc;
 	unsigned int	i;
-	char			*p;
 
+	lnsrc = 0;
 	i = 0;
-	p = s;
-	while (i < n)
+	while (src[lnsrc])
+		lnsrc++;
+	if (!src || size < 1)
+		return (lnsrc);
+	while ((i < size - 1) && (i < lnsrc))
 	{
-		*(p + i) = 0;
+		dst[i] = src[i];
 		i++;
 	}
+	dst[i] = '\0';
+	return (lnsrc);
 }
