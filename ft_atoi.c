@@ -6,11 +6,11 @@
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 21:11:50 by TheTerror         #+#    #+#             */
-/*   Updated: 2022/11/17 21:11:50 by TheTerror        ###   ########lyon.fr   */
+/*   Updated: 2022/11/24 17:55:45 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(const char *ptr)
+int	ft_atoi(const char *nptr)
 {
 	unsigned int	i;
 	int				sign;
@@ -19,19 +19,19 @@ int	ft_atoi(const char *ptr)
 	i = 0;
 	fdb = 0;
 	sign = 1;
-	while (ptr[i] == ' ' || ptr[i] >= 9 && ptr[i] <= 13)
+	while (nptr[i] == ' ' || nptr[i] >= 9 && nptr[i] <= 13)
 		i++;
-	if (ptr[i] == '+')
+	if (nptr[i] == '+')
 		i++;
-	else if (ptr[i] == '-')
+	else if (nptr[i] == '-')
 	{
 		sign = -1;
 		i++;
 	}
-	while (ptr[i] > '0' && ptr[i] < '9')
+	while (nptr[i] > '0' && nptr[i] < '9')
 	{
 		fdb *= 10;
-		fdb += (ptr[i] - 48);
+		fdb += (nptr[i] - 48);
 		i++;
 	}
 	return (fdb * sign);
