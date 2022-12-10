@@ -6,11 +6,11 @@
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 21:44:11 by TheTerror         #+#    #+#             */
-/*   Updated: 2022/11/24 23:38:28 by TheTerror        ###   ########lyon.fr   */
+/*   Updated: 2022/12/10 17:39:34 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	strlcat( char *dst, const char *src, unsigned int size)
+unsigned int	ft_strlcat( char *dst, const char *src, unsigned int size)
 {
 	unsigned int	lndst;
 	unsigned int	lnsrc;

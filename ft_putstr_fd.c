@@ -6,13 +6,14 @@
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 11:57:42 by TheTerror         #+#    #+#             */
-/*   Updated: 2022/11/24 23:38:48 by TheTerror        ###   ########lyon.fr   */
+/*   Updated: 2022/12/10 17:22:23 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<unistd.h>
+#include "libft.h"
 
-unsigned int	ft_strlen(const char *str)
+/*unsigned int	ft_strlen(const char *str)
 {
 	unsigned int	i;
 
@@ -20,7 +21,7 @@ unsigned int	ft_strlen(const char *str)
 	while (str[i])
 		i++;
 	return (i);
-}
+}*/
 
 void	ft_putstr_fd(char *s, int fd)
 {

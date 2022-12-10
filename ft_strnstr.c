@@ -6,7 +6,7 @@
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 19:58:18 by TheTerror         #+#    #+#             */
-/*   Updated: 2022/11/24 23:38:13 by TheTerror        ###   ########lyon.fr   */
+/*   Updated: 2022/12/10 18:01:07 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,9 @@ char	*ft_strnstr(const char *s1, const char *s2, unsigned int len)
 		if (s1[i] == s2[j])
 		{
 			k = i;
-			while (i < len && (s1[i] == s2[j]), i++)
+			while (i < len && (s1[i] == s2[j]))
 			{
+				i++;
 				j++;
 				if (s2[j] == '\0')
 					return ((char *) &s1[k]);

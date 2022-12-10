@@ -6,13 +6,14 @@
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 21:19:13 by TheTerror         #+#    #+#             */
-/*   Updated: 2022/11/24 23:38:18 by TheTerror        ###   ########lyon.fr   */
+/*   Updated: 2022/12/10 17:28:51 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<stdlib.h>
+#include "libft.h"
 
-unsigned int	ft_strlen(const char *str)
+/*unsigned int	ft_strlen(const char *str)
 {
 	unsigned int	i;
 
@@ -20,13 +21,13 @@ unsigned int	ft_strlen(const char *str)
 	while (str[i])
 		i++;
 	return (i);
-}
+}*/
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char			*str;
-	unsigned int 	len;
-	unsigned int 	i;
+	unsigned int	len;
+	unsigned int	i;
 
 	i = 0;
 	len = ft_strlen(s);

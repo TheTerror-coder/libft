@@ -6,20 +6,21 @@
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 13:43:18 by TheTerror         #+#    #+#             */
-/*   Updated: 2022/11/24 23:38:08 by TheTerror        ###   ########lyon.fr   */
+/*   Updated: 2022/12/10 17:37:23 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<stdlib.h>
+#include "libft.h"
 
-int	ft_isalnum(int c)
+/*int	ft_isalnum(int c)
 {
 	if ((c > 47 && c < 58) || (c > 64 && c < 91) || (c > 96 && c < 123))
 		return (1);
 	return (0);
-}
+}*/
 
-int	ft_strlen(const char *s, unsigned int op)
+int	ft_slen(const char *s, unsigned int op)
 {
 	int	i;
 
@@ -76,8 +77,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*str;
 
 	i = 0;
-	len = ft_strlen(s1, 0);
-	k = ft_strlen(s1, 1);
+	len = ft_slen(s1, 0);
+	k = ft_slen(s1, 1);
 	str = malloc(sizeof(char *) * (len + 1));
 	if (!str)
 		return (0);
