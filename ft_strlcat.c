@@ -6,11 +6,11 @@
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 21:44:11 by TheTerror         #+#    #+#             */
-/*   Updated: 2022/12/10 17:39:34 by TheTerror        ###   ########lyon.fr   */
+/*   Updated: 2022/12/12 14:01:14 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_strlcat( char *dst, const char *src, unsigned int size)
+unsigned int	ft_strlcat( char *dst, const char *src, unsigned int dstsize)
 {
 	unsigned int	lndst;
 	unsigned int	lnsrc;
@@ -20,14 +20,14 @@ unsigned int	ft_strlcat( char *dst, const char *src, unsigned int size)
 	lndst = 0;
 	lnsrc = 0;
 	j = 0;
-	while (dst[lndst])
+	while (dst[lndst] != 0)
 		lndst++;
-	while (src[lnsrc])
+	while (src[lnsrc] != 0)
 		lnsrc++;
-	if (size <= lndst)
-		return (lnsrc + lndst);
+	if (dstsize <= lndst)
+		return (lnsrc + dstsize);
 	i = lndst;
-	while (i < size - 1 && src[j])
+	while (i < dstsize - 1 && src[j])
 	{
 		dst[i] = src[j];
 		i++;

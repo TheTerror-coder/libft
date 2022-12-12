@@ -6,7 +6,7 @@
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 14:09:21 by TheTerror         #+#    #+#             */
-/*   Updated: 2022/11/24 22:43:06 by TheTerror        ###   ########lyon.fr   */
+/*   Updated: 2022/12/12 15:05:49 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_memcmp(const void *s1, const void *s2, unsigned int n)
 	diff = 0;
 	while (i < n && diff == 0)
 	{
-		diff = p1[i] - p2[i];
+		diff = (unsigned char) p1[i] - (unsigned char) p2[i];
 		i++;
 	}
 	return (diff);

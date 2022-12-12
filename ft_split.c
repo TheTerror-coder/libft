@@ -6,17 +6,18 @@
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 22:37:36 by TheTerror         #+#    #+#             */
-/*   Updated: 2022/12/10 16:35:54 by TheTerror        ###   ########lyon.fr   */
+/*   Updated: 2022/12/12 20:08:11 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<stdlib.h>
+#include "libft.h"
 
-int	ft_count_row(const char *s, char c)
+unsigned int	ft_count_row(const char *s, char c)
 {
-	int	i;
-	int	nbrow;
-	int	ii;
+	unsigned int	i;
+	unsigned int	nbrow;
+	unsigned int	ii;
 
 	i = 0;
 	ii = 0;
@@ -39,81 +40,60 @@ int	ft_count_row(const char *s, char c)
 	return (nbrow);
 }
 
-void	ft_count_col(const char *s, char c, int *nbcol, int *i)
+unsigned ft_count_col(const char *s, char c, unsigned *nbcol, unsigned *i)
 {
+	unsigned int start;
+
 	*nbcol = 0;
 	while (s[*i] == c)
 		*i = *i + 1;
-	while (s[*i] && (s[*i] != c))
+	start = *i;
+	while ((s[*i] != 0) && (s[*i] != c))
 	{
 		*nbcol = *nbcol + 1;
 		*i = *i + 1;
 	}
+	return (start);
 }
 
-int	ft_fill(char *str, const char *s, char c, int *i)
+void	ft_free(char **arr, unsigned int ix)
 {
-	int	ix;
-
-	ix = 0;
-	while (s[*i] == c)
-		*i = *i + 1;
-	while (s[*i])
+	while (ix > 0)
 	{
-		if (s[*i] == c)
-		{
-			str[ix] = 0;
-			return (ix);
-		}
-		str[ix] = s[*i];
-		ix++;
-		*i = *i + 1;
+		free(arr[ix]);
+		ix--;
 	}
-	str[ix] = 0;
-	return (ix);
-}
-
-void	ft_relay(char **sstr, const char *s, char c)
-{
-	int	ix;
-	int	i;
-	int	trash;
-
-	i = 0;
-	ix = 0;
-	while (sstr[ix])
-	{
-		trash = ft_fill(sstr[ix], s, c, &i);
-		ix++;
-	}
-	(void) trash;
+	free(arr[ix]);
+	free(arr);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	int		nbrow;
-	int		nbcol;
-	int		ix;
-	int		i;
+	unsigned int		nbrow;
+	unsigned int		nbcol;
+	unsigned int		ix;
+	unsigned int		i;
+	unsigned int		start;
 	char	**sstr;
 
 	ix = 0;
 	i = 0;
-	nbrow = 0;
 	nbrow = ft_count_row(s, c);
 	sstr = malloc(sizeof(char) * (nbrow + 1));
 	if (!sstr)
-		return (0);
+		return (NULL);
+	sstr[nbrow] = NULL;
 	while (ix < nbrow)
 	{
-		ft_count_col(s, c, &nbcol, &i);
-		sstr[ix] = malloc(sizeof(char) * (nbcol + 1));
+		start = ft_count_col(s, c, &nbcol, &i);
+		sstr[ix] = ft_substr(s, start, nbcol);
 		if (!sstr[ix])
-			return (0);
+		{
+			ft_free(sstr, ix);
+			return (NULL);
+		}
 		ix++;
 	}
-	sstr[ix] = 0;
-	ft_relay(sstr, s, c);
 	return (sstr);
 }
 
