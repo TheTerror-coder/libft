@@ -6,7 +6,7 @@
 #    By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/10 15:29:29 by TheTerror         #+#    #+#              #
-#    Updated: 2022/12/10 20:20:38 by TheTerror        ###   ########lyon.fr    #
+#    Updated: 2022/12/12 12:46:12 by TheTerror        ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ HEADER = libft.h
 NAME = libft.a
 CFLAGS = -Wall -Werror -Wextra
 CC = cc
-AR = ar -crs
+AR = ar -rcs
 SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c\
 		ft_strlen.c ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c\
 		ft_strlcpy.c ft_strlcat.c ft_toupper.c ft_tolower.c ft_strchr.c\
@@ -30,7 +30,7 @@ all : $(NAME)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME) : $(OBJ)
-	$(CC) $^ -o $@
+	$(AR) $@ $^
 
 clean :
 	$(RM) $(OBJ)
