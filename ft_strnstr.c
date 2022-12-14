@@ -6,11 +6,11 @@
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 19:58:18 by TheTerror         #+#    #+#             */
-/*   Updated: 2022/12/10 18:01:07 by TheTerror        ###   ########lyon.fr   */
+/*   Updated: 2022/12/14 19:07:47 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strnstr(const char *s1, const char *s2, unsigned int len)
+char	*ft_strnstr(const char *s1, const char *s2, int len)
 {
 	unsigned int	i;
 	unsigned int	j;
@@ -19,13 +19,13 @@ char	*ft_strnstr(const char *s1, const char *s2, unsigned int len)
 	i = 0;
 	if (!s2[i])
 		return ((char *) s1);
-	while (i < len)
+	while (i < (unsigned) len)
 	{
 		j = 0;
 		if (s1[i] == s2[j])
 		{
 			k = i;
-			while (i < len && (s1[i] == s2[j]))
+			while (i < (unsigned) len && (s1[i] == s2[j]))
 			{
 				i++;
 				j++;

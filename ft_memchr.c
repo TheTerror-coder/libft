@@ -6,7 +6,7 @@
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 21:52:59 by TheTerror         #+#    #+#             */
-/*   Updated: 2022/11/24 18:59:43 by TheTerror        ###   ########lyon.fr   */
+/*   Updated: 2022/12/14 18:34:13 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ void	*ft_memchr(const void *s, int c, unsigned int n)
 
 	i = 0;
 	p = s;
-	while ((i < n) && p[i])
+	while (i < n)
 	{
-		if (p[i] == c)
+		if (p[i] == (char) c)
 			return ((void *) &p[i]);
 		i++;
 	}

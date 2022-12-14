@@ -6,7 +6,7 @@
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 12:39:10 by TheTerror         #+#    #+#             */
-/*   Updated: 2022/12/12 14:13:40 by TheTerror        ###   ########lyon.fr   */
+/*   Updated: 2022/12/14 18:02:18 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strchr(const char *s, int c)
 	i = 0;
 	while (s[i])
 	{
-		if (s[i] == c)
+		if (s[i] == (unsigned char) c)
 			return ((char *) &s[i]);
 		i++;
 	}
