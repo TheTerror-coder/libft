@@ -6,56 +6,45 @@
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 22:37:36 by TheTerror         #+#    #+#             */
-/*   Updated: 2022/12/12 20:08:11 by TheTerror        ###   ########lyon.fr   */
+/*   Updated: 2022/12/14 16:45:10 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<stdlib.h>
+#include<stdio.h>
 #include "libft.h"
 
 unsigned int	ft_count_row(const char *s, char c)
 {
 	unsigned int	i;
 	unsigned int	nbrow;
-	unsigned int	ii;
 
 	i = 0;
-	ii = 0;
 	nbrow = 0;
 	while (s[i])
 	{
 		while (s[i] == c)
-		{
 			i++;
-			ii = i;
-		}
-		while (s[i] != 0 && s[i] != c)
+		if (s[i])
 		{
-			ii = i;
-			i++;
-		}
-		if ((ii - i) != 0)
+			while (s[i] != 0 && s[i] != c)
+				i++;
 			nbrow++;
+		}
 	}
 	return (nbrow);
 }
 
-unsigned ft_count_col(const char *s, char c, unsigned *nbcol, unsigned *i)
+unsigned int	ft_count_col(const char *s, char c)
 {
-	unsigned int start;
+	unsigned int	i;
 
-	*nbcol = 0;
-	while (s[*i] == c)
-		*i = *i + 1;
-	start = *i;
-	while ((s[*i] != 0) && (s[*i] != c))
-	{
-		*nbcol = *nbcol + 1;
-		*i = *i + 1;
-	}
-	return (start);
+	i = 0;
+	while ((s[i] != 0) && (s[i] != c))
+		i++;
+	return (i);
 }
-
+/*
 void	ft_free(char **arr, unsigned int ix)
 {
 	while (ix > 0)
@@ -66,34 +55,48 @@ void	ft_free(char **arr, unsigned int ix)
 	free(arr[ix]);
 	free(arr);
 }
+*/
+
+int	ft_fill(char const *s, char **sstr, char c)
+{
+	unsigned int	i;
+	unsigned int	ix;
+	unsigned int	len;
+
+	i = 0;
+	ix = 0;
+	while (s[i])
+	{
+		while (s[i] == c)
+			i++;
+		len = ft_count_col(&s[i], c);
+		if (s[i])
+		{
+			sstr[ix] = ft_substr(s, i, len);
+			ix++;
+		}
+		i = len + i;
+	}
+	sstr[ix] = 0;
+	return (0);
+}
+/*			if (len > ft_strlen(sstr[ix]))
+			{
+				ft_free(sstr, ix);
+				return (0);
+			}
+*/			
 
 char	**ft_split(char const *s, char c)
 {
-	unsigned int		nbrow;
-	unsigned int		nbcol;
-	unsigned int		ix;
-	unsigned int		i;
-	unsigned int		start;
-	char	**sstr;
+	unsigned int	len;
+	char			**sstr;
 
-	ix = 0;
-	i = 0;
-	nbrow = ft_count_row(s, c);
-	sstr = malloc(sizeof(char) * (nbrow + 1));
+	len = ft_count_row(s, c);
+	sstr = malloc(sizeof(char *) * (len + 1));
 	if (!sstr)
 		return (NULL);
-	sstr[nbrow] = NULL;
-	while (ix < nbrow)
-	{
-		start = ft_count_col(s, c, &nbcol, &i);
-		sstr[ix] = ft_substr(s, start, nbcol);
-		if (!sstr[ix])
-		{
-			ft_free(sstr, ix);
-			return (NULL);
-		}
-		ix++;
-	}
+	ft_fill(s, sstr, c);
 	return (sstr);
 }
 

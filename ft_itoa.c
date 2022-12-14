@@ -6,11 +6,12 @@
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 15:47:39 by TheTerror         #+#    #+#             */
-/*   Updated: 2022/11/24 18:26:56 by TheTerror        ###   ########lyon.fr   */
+/*   Updated: 2022/12/14 17:41:35 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<stdlib.h>
+#include "libft.h"
 
 int	ft_set_len(int n)
 {
@@ -69,7 +70,7 @@ char	*ft_itoa(int n)
 	{
 		if (n == -2147483648)
 		{
-			str = "-2147483648";
+			ft_memcpy(str, "-2147483648", len + 1);
 			return (str);
 		}
 		str[0] = '-';
