@@ -6,7 +6,7 @@
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 22:37:36 by TheTerror         #+#    #+#             */
-/*   Updated: 2022/12/14 16:45:10 by TheTerror        ###   ########lyon.fr   */
+/*   Updated: 2022/12/15 18:49:53 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ unsigned int	ft_count_col(const char *s, char c)
 		i++;
 	return (i);
 }
-/*
+
 void	ft_free(char **arr, unsigned int ix)
 {
 	while (ix > 0)
@@ -55,7 +55,6 @@ void	ft_free(char **arr, unsigned int ix)
 	free(arr[ix]);
 	free(arr);
 }
-*/
 
 int	ft_fill(char const *s, char **sstr, char c)
 {
@@ -73,19 +72,18 @@ int	ft_fill(char const *s, char **sstr, char c)
 		if (s[i])
 		{
 			sstr[ix] = ft_substr(s, i, len);
+			if (!sstr[ix])
+			{
+				ft_free(sstr, ix);
+				return (0);
+			}	
 			ix++;
 		}
 		i = len + i;
 	}
 	sstr[ix] = 0;
-	return (0);
+	return (55);
 }
-/*			if (len > ft_strlen(sstr[ix]))
-			{
-				ft_free(sstr, ix);
-				return (0);
-			}
-*/			
 
 char	**ft_split(char const *s, char c)
 {
@@ -96,12 +94,12 @@ char	**ft_split(char const *s, char c)
 	sstr = malloc(sizeof(char *) * (len + 1));
 	if (!sstr)
 		return (NULL);
-	ft_fill(s, sstr, c);
+	if (!ft_fill(s, sstr, c))
+		return (0);
 	return (sstr);
 }
 
 /*
-
 ****NB
 
 _ Null dans un tableau a pour adresse 00000...

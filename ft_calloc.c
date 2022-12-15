@@ -6,7 +6,7 @@
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 13:15:28 by TheTerror         #+#    #+#             */
-/*   Updated: 2022/11/24 18:25:00 by TheTerror        ###   ########lyon.fr   */
+/*   Updated: 2022/12/15 17:11:04 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ void	*ft_calloc(unsigned int nmemb, unsigned int size)
 	unsigned int	i;
 
 	i = 0;
-	if (nmemb == 0 || size == 0)
-		return (0);
 	arr = malloc(nmemb * size);
 	p = arr;
 	if (!p)

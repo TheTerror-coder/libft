@@ -6,7 +6,7 @@
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 21:25:08 by TheTerror         #+#    #+#             */
-/*   Updated: 2022/12/12 15:02:35 by TheTerror        ###   ########lyon.fr   */
+/*   Updated: 2022/12/15 15:09:18 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,12 @@ int	ft_strncmp(const char *s1, const char *s2, unsigned int n)
 
 	i = 0;
 	feed = 0;
+	if (!s1[i] && !s2[i])
+		return (feed);
 	while (i < n)
 	{
+		if (!s1[i] && !s2[i])
+			return (feed);
 		feed = (unsigned char) s1[i] - (unsigned char) s2[i];
 		if (feed != 0)
 			return (feed);

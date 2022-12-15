@@ -6,7 +6,7 @@
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 16:04:55 by TheTerror         #+#    #+#             */
-/*   Updated: 2022/12/14 18:11:56 by TheTerror        ###   ########lyon.fr   */
+/*   Updated: 2022/12/15 14:59:09 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strrchr(const char *s, int c)
 			p = &s[i];
 		i++;
 	}
-	if (s[i] == c)
+	if (s[i] == (unsigned char) c)
 		p = &s[i];
 	return ((char *) p);
 }

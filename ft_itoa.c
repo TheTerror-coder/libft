@@ -6,7 +6,7 @@
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 15:47:39 by TheTerror         #+#    #+#             */
-/*   Updated: 2022/12/14 17:41:35 by TheTerror        ###   ########lyon.fr   */
+/*   Updated: 2022/12/15 16:57:14 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	ft_set_len(int n)
 	return (len);
 }
 
-void	ft_fill(char *str, int n, int len)
+void	ft_append(char *str, int n, int len)
 {
 	int	div;
 	int	mod;
@@ -76,6 +76,6 @@ char	*ft_itoa(int n)
 		str[0] = '-';
 		n *= -1;
 	}
-	ft_fill(str, n, len);
+	ft_append(str, n, len);
 	return (str);
 }
