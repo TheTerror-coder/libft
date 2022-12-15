@@ -6,7 +6,7 @@
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 13:43:18 by TheTerror         #+#    #+#             */
-/*   Updated: 2022/12/12 17:39:34 by TheTerror        ###   ########lyon.fr   */
+/*   Updated: 2022/12/15 14:25:20 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,29 +27,51 @@ int	ft_is_in_set(const char *set, char c)
 	return (0);
 }
 
+unsigned int	ft_len(const char *s, char const *set)
+{
+	unsigned int	i;
+	unsigned int	len;
+
+	i = 0;
+	len = 0;
+	while (ft_is_in_set(set, s[i]) != 0)
+		i++;
+	while (s[i])
+	{
+		len++;
+		i++;
+	}
+	if (len != 0)
+		i--;
+	while (ft_is_in_set(set, s[i]) != 0)
+	{
+		len--;
+		i--;
+	}
+	return (len);
+}
+
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	int		len;
 	int		i;
+	int		k;
 	char	*str;
 
 	i = 0;
-	len = ft_strlen(s1);
-	str = malloc(sizeof(char *) * (len + 1));
+	len = ft_len(s1, set);
+	str = malloc(sizeof(char) * (len + 1));
 	if (!str)
 		return (NULL);
-	len = 0;
+	k = 0;
 	while (ft_is_in_set(set, s1[i]) != 0)
 		i++;
-	while (s1[i])
+	while (k < len && s1[i] != 0)
 	{
-		str[len] = s1[i];
-		len++;
+		str[k] = s1[i];
+		k++;
 		i++;
 	}
-	str[len] = '\0';
-	len--;
-	while (ft_is_in_set(set, str[len--]) != 0)
-		str[len] = '\0';
+	str[k] = '\0';
 	return (str);
 }

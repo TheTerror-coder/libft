@@ -6,7 +6,7 @@
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 13:11:45 by TheTerror         #+#    #+#             */
-/*   Updated: 2022/12/10 17:25:31 by TheTerror        ###   ########lyon.fr   */
+/*   Updated: 2022/12/15 13:52:58 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	len1 = ft_strlen(s1);
 	len2 = ft_strlen(s2);
-	str = malloc(sizeof(char *) * (len1 + len2 + 1));
+	str = malloc(sizeof(char) * (len1 + len2 + 1));
 	if (!str)
 		return (0);
 	len1 = 0;

@@ -6,7 +6,7 @@
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 14:20:16 by TheTerror         #+#    #+#             */
-/*   Updated: 2022/11/24 23:14:20 by TheTerror        ###   ########lyon.fr   */
+/*   Updated: 2022/12/15 13:51:23 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,20 @@
 char	*ft_strdup(const char *s)
 {
 	unsigned int	len;
-	char			*str;
+	char			*s_dup;
 
 	len = 0;
 	while (s[len])
 		len++;
-	str = malloc(sizeof(char *) * (len + 1));
-	if (!str)
+	s_dup = malloc(sizeof(char) * (len + 1));
+	if (!s_dup)
 		return (0);
 	len = 0;
 	while (s[len])
 	{
-		str[len] = s[len];
+		s_dup[len] = s[len];
 		len++;
 	}
-	str[len] = 0;
-	return (str);
+	s_dup[len] = 0;
+	return (s_dup);
 }

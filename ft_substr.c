@@ -6,7 +6,7 @@
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 21:20:19 by TheTerror         #+#    #+#             */
-/*   Updated: 2022/12/12 18:47:05 by TheTerror        ###   ########lyon.fr   */
+/*   Updated: 2022/12/15 14:43:44 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_substr(char const *s, unsigned int start, unsigned int len)
 		ss_len = ft_strlen(&s[start]);
 		if (ss_len > len)
 			ss_len = len;
-		ss = malloc(sizeof(char *) * (ss_len + 1));
+		ss = malloc(sizeof(char) * (ss_len + 1));
 		if (!ss)
 			return (NULL);
 		i = 0;
