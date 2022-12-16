@@ -6,37 +6,30 @@
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 19:55:50 by TheTerror         #+#    #+#             */
-/*   Updated: 2022/12/16 13:46:57 by TheTerror        ###   ########lyon.fr   */
+/*   Updated: 2022/12/16 19:49:33 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<stdlib.h>
 #include "libft.h"
 
-t_list	*ft_add_el(t_list *inter, void *cont)
-{
-	t_list	*list;
-
-	list = malloc(sizeof(t_list));
-	if (!list)
-		return (NULL);
-	list = NULL;
-	list->content = cont;
-	list->next = inter;
-	return (list);
-}
-
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*inter;
+	t_list	*elm;
+	t_list	*nwlst;
 
-	inter = NULL;
-	while (lst->next != NULL)
+	if (!lst)
+		return (NULL);
+	while (lst)
 	{
-		inter = ft_add_el(inter, f(lst->content));
-		if (!inter)
-			ft_lstclear(&inter->next, del);
+		elm = ft_lstnew(f(lst->content));
+		if (!elm)
+		{
+			ft_lstclear(&(elm->next), del);
+			return (NULL);
+		}
+		ft_lstadd_back(&nwlst, elm);
 		lst = lst->next;
 	}
-	return (inter);
+	return (nwlst);
 }
