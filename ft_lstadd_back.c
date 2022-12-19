@@ -6,7 +6,7 @@
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 17:24:34 by TheTerror         #+#    #+#             */
-/*   Updated: 2022/12/16 19:41:49 by TheTerror        ###   ########lyon.fr   */
+/*   Updated: 2022/12/19 14:00:30 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list	*elm;
+	t_list	*last_one;
 
-	elm = ft_lstlast(*lst);
-	if (!elm)
+	last_one = ft_lstlast(*lst);
+	if (!last_one)
 		*lst = new;
 	else
-		elm->next = new;
+		last_one->next = new;
 }
