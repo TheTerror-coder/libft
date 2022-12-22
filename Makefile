@@ -6,7 +6,7 @@
 #    By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/10 15:29:29 by TheTerror         #+#    #+#              #
-#    Updated: 2022/12/16 15:55:24 by TheTerror        ###   ########lyon.fr    #
+#    Updated: 2022/12/22 15:14:11 by TheTerror        ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,16 +29,18 @@ SRC_BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c\
 OBJ = 		$(SRC:.c=.o)
 OBJ_BONUS = $(SRC_BONUS:.c=.o)
 
-all : $(NAME) Makefile
+all : $(NAME)
 
 %.o : %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c -o $@ $<
 
 bonus : $(OBJ_BONUS) $(HEADER)
 	$(AR) $(NAME) $^
+	ranlib $(NAME)
 
 $(NAME) : $(OBJ) $(HEADER)
 	$(AR) $@ $^
+	ranlib $(NAME)
 
 clean :
 	$(RM) $(ALL_OBJ)
