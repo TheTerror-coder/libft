@@ -6,9 +6,11 @@
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 21:58:31 by TheTerror         #+#    #+#             */
-/*   Updated: 2022/11/24 18:25:06 by TheTerror        ###   ########lyon.fr   */
+/*   Updated: 2023/01/04 16:22:09 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_bzero(void *s, unsigned int n)
 {

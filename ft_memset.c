@@ -6,9 +6,11 @@
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 16:06:44 by TheTerror         #+#    #+#             */
-/*   Updated: 2022/12/10 16:33:34 by TheTerror        ###   ########lyon.fr   */
+/*   Updated: 2023/01/04 16:10:05 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	*ft_memset(void *s, int c, unsigned int n)
 {

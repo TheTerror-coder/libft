@@ -6,9 +6,11 @@
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 21:52:59 by TheTerror         #+#    #+#             */
-/*   Updated: 2022/12/14 18:34:13 by TheTerror        ###   ########lyon.fr   */
+/*   Updated: 2023/01/04 16:09:39 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	*ft_memchr(const void *s, int c, unsigned int n)
 {

@@ -6,9 +6,11 @@
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 16:20:44 by TheTerror         #+#    #+#             */
-/*   Updated: 2022/11/24 18:24:35 by TheTerror        ###   ########lyon.fr   */
+/*   Updated: 2023/01/04 16:09:03 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isdigit(int c)
 {

@@ -6,11 +6,10 @@
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 15:47:39 by TheTerror         #+#    #+#             */
-/*   Updated: 2022/12/15 16:57:14 by TheTerror        ###   ########lyon.fr   */
+/*   Updated: 2023/01/04 14:27:54 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdlib.h>
 #include "libft.h"
 
 int	ft_set_len(int n)

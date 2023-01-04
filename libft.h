@@ -6,12 +6,15 @@
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 13:35:39 by TheTerror         #+#    #+#             */
-/*   Updated: 2022/12/16 15:47:53 by TheTerror        ###   ########lyon.fr   */
+/*   Updated: 2023/01/04 16:05:51 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+
+# include<unistd.h>
+# include<stdlib.h>
 
 typedef struct s_list	t_list;
 

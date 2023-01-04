@@ -6,9 +6,11 @@
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 23:27:19 by TheTerror         #+#    #+#             */
-/*   Updated: 2022/11/24 22:56:52 by TheTerror        ###   ########lyon.fr   */
+/*   Updated: 2023/01/04 16:09:59 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	*ft_memmove(void *dest, const void *src, unsigned int n)
 {

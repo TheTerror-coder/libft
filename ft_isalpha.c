@@ -6,9 +6,11 @@
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 16:29:24 by TheTerror         #+#    #+#             */
-/*   Updated: 2022/11/24 18:24:46 by TheTerror        ###   ########lyon.fr   */
+/*   Updated: 2023/01/04 16:21:39 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isalpha(int c)
 {
@@ -17,7 +19,7 @@ int	ft_isalpha(int c)
 		if (c >= 'A' && c <= 'Z')
 			return (1);
 		if (c >= 'a' && c <= 'z')
-			return (2);
+			return (1);
 	}
 	return (0);
 }

@@ -6,9 +6,11 @@
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 22:19:30 by TheTerror         #+#    #+#             */
-/*   Updated: 2022/12/15 17:05:26 by TheTerror        ###   ########lyon.fr   */
+/*   Updated: 2023/01/04 16:09:53 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	*ft_memcpy(void *dest, const void *src, unsigned int n)
 {
