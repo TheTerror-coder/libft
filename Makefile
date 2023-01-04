@@ -6,7 +6,7 @@
 #    By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/10 15:29:29 by TheTerror         #+#    #+#              #
-#    Updated: 2023/01/04 14:19:47 by TheTerror        ###   ########lyon.fr    #
+#    Updated: 2023/01/04 16:35:26 by TheTerror        ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,13 +34,15 @@ OBJ_BONUS = $(SRC_BONUS:.c=.o)
 all : $(NAME)
 
 %.o : %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c -o $@ $<
 
 bonus : $(OBJ_BONUS) $(HEADER)
 	$(AR) $(NAME) $^
+	ranlib $(NAME)
 
 $(NAME) : $(OBJ) $(HEADER)
 	$(AR) $@ $^
+	ranlib $(NAME)
 
 clean :
 	$(RM) $(ALL_OBJ)
