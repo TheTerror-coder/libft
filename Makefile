@@ -6,7 +6,7 @@
 #    By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/10 15:29:29 by TheTerror         #+#    #+#              #
-#    Updated: 2023/01/04 16:35:26 by TheTerror        ###   ########lyon.fr    #
+#    Updated: 2023/01/05 12:40:22 by TheTerror        ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,8 +14,8 @@ HEADER = 	libft.h
 NAME = 		libft.a
 CFLAGS = 	-Wall -Werror -Wextra
 CC = 		cc
-AR = 		ar -rcs
-ALL_OBJ = 	*.o
+AR = 		ar -rc
+
 SRC = 		ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c\
 			ft_strlen.c ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c\
 			ft_strlcpy.c ft_strlcat.c ft_toupper.c ft_tolower.c ft_strchr.c\
@@ -33,19 +33,19 @@ OBJ_BONUS = $(SRC_BONUS:.c=.o)
 
 all : $(NAME)
 
-%.o : %.c
-	$(CC) $(CFLAGS) -c -o $@ $<
+%.o : %.c $(HEADER)
+	@$(CC) $(CFLAGS) -c -o $@ $<
 
 bonus : $(OBJ_BONUS) $(HEADER)
-	$(AR) $(NAME) $^
-	ranlib $(NAME)
+	@$(AR) $(NAME) $^
+	@ranlib $(NAME)
 
 $(NAME) : $(OBJ) $(HEADER)
-	$(AR) $@ $^
-	ranlib $(NAME)
+	@$(AR) $@ $^
+	@ranlib $(NAME)
 
 clean :
-	$(RM) $(ALL_OBJ)
+	@$(RM) $(OBJ) $(OBJ_BONUS)
 fclean : clean
-	$(RM) $(NAME)
+	@$(RM) $(NAME)
 re : fclean all

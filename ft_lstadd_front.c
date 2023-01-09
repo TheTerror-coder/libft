@@ -6,7 +6,7 @@
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 17:34:19 by TheTerror         #+#    #+#             */
-/*   Updated: 2022/12/16 16:03:02 by TheTerror        ###   ########lyon.fr   */
+/*   Updated: 2023/01/05 12:26:41 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	new->next = *lst;
-	*lst = new;
+	if (!lst || !new)
+		return ;
+	else if (lst && new)
+		new->next = *lst;
+		*lst = new;
 }
