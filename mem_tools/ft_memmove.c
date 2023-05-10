@@ -1,26 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/05 17:35:04 by TheTerror         #+#    #+#             */
-/*   Updated: 2023/05/09 16:38:02 by TheTerror        ###   ########lyon.fr   */
+/*   Created: 2022/11/13 23:27:19 by TheTerror         #+#    #+#             */
+/*   Updated: 2023/05/09 16:36:12 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include  "../libft.h"
+#include "../libft.h"
 
-t_list	*ft_lstnew(void *content)
+void	*ft_memmove(void *dest, const void *src, unsigned int n)
 {
-	t_list	*list;
+	unsigned int	i;
+	const char		*psrc;
+	char			*pdest;
 
-	list = malloc(sizeof(t_list));
-	if (list)
+	psrc = src;
+	pdest = dest;
+	if (pdest < psrc)
 	{
-		list->content = content;
-		list->next = NULL;
+		i = 0;
+		while (i < n)
+		{
+			*(pdest + i) = *(psrc + i);
+			i++;
+		}
 	}
-	return (list);
+	else if (pdest > psrc)
+	{
+		while (n > 0)
+		{
+			n--;
+			*(pdest + n) = *(psrc + n);
+		}
+	}
+	return ((void *) dest);
 }

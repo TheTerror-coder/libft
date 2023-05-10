@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/05 17:35:04 by TheTerror         #+#    #+#             */
-/*   Updated: 2023/05/09 16:38:02 by TheTerror        ###   ########lyon.fr   */
+/*   Created: 2022/11/18 13:15:28 by TheTerror         #+#    #+#             */
+/*   Updated: 2023/05/09 16:36:12 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include  "../libft.h"
+#include "../libft.h"
 
-t_list	*ft_lstnew(void *content)
+void	*ft_calloc(unsigned int nmemb, unsigned int size)
 {
-	t_list	*list;
+	void			*arr;
+	char			*p;
+	unsigned int	i;
 
-	list = malloc(sizeof(t_list));
-	if (list)
+	i = 0;
+	arr = malloc(nmemb * size);
+	p = arr;
+	if (!p)
+		return (0);
+	while (i < (nmemb * size))
 	{
-		list->content = content;
-		list->next = NULL;
+		p[i] = 0;
+		i++;
 	}
-	return (list);
+	return (arr);
 }

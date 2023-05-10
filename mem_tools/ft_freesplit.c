@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_freesplit.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/05 17:35:04 by TheTerror         #+#    #+#             */
-/*   Updated: 2023/05/09 16:38:02 by TheTerror        ###   ########lyon.fr   */
+/*   Created: 2023/04/20 17:23:29 by TheTerror         #+#    #+#             */
+/*   Updated: 2023/05/09 16:36:12 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include  "../libft.h"
+#include "../libft.h"
 
-t_list	*ft_lstnew(void *content)
+void	ft_freesplit(char **str)
 {
-	t_list	*list;
+	int	i;
 
-	list = malloc(sizeof(t_list));
-	if (list)
+	i = 0;
+	if (!str)
+		return ;
+	while (str[i])
 	{
-		list->content = content;
-		list->next = NULL;
+		free(str[i]);
+		str[i] = NULL;
+		i++;
 	}
-	return (list);
+	free(str);
+	str = NULL;
 }

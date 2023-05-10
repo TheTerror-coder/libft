@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/05 17:35:04 by TheTerror         #+#    #+#             */
-/*   Updated: 2023/05/09 16:38:02 by TheTerror        ###   ########lyon.fr   */
+/*   Created: 2022/11/10 18:37:45 by TheTerror         #+#    #+#             */
+/*   Updated: 2023/05/09 16:36:12 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include  "../libft.h"
+#include "../libft.h"
 
-t_list	*ft_lstnew(void *content)
+int	ft_isalnum(int c)
 {
-	t_list	*list;
-
-	list = malloc(sizeof(t_list));
-	if (list)
+	if (c >= 0 && c <= 255)
 	{
-		list->content = content;
-		list->next = NULL;
+		if (c > 47 && c < 58)
+			return (1);
+		if (c > 64 && c < 91)
+			return (2);
+		if (c > 96 && c < 123)
+			return (4);
 	}
-	return (list);
+	return (0);
 }

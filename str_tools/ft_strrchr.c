@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/05 17:35:04 by TheTerror         #+#    #+#             */
-/*   Updated: 2023/05/09 16:38:02 by TheTerror        ###   ########lyon.fr   */
+/*   Created: 2022/11/15 16:04:55 by TheTerror         #+#    #+#             */
+/*   Updated: 2023/05/09 16:36:12 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include  "../libft.h"
+#include "../libft.h"
 
-t_list	*ft_lstnew(void *content)
+char	*ft_strrchr(const char *s, int c)
 {
-	t_list	*list;
+	const char		*p;
+	unsigned int	i;
 
-	list = malloc(sizeof(t_list));
-	if (list)
+	i = 0;
+	p = 0;
+	while (s[i])
 	{
-		list->content = content;
-		list->next = NULL;
+		if (s[i] == (unsigned char) c)
+			p = &s[i];
+		i++;
 	}
-	return (list);
+	if (s[i] == (unsigned char) c)
+		p = &s[i];
+	return ((char *) p);
 }

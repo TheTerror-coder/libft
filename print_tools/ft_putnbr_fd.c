@@ -1,26 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/05 17:35:04 by TheTerror         #+#    #+#             */
-/*   Updated: 2023/05/09 16:38:02 by TheTerror        ###   ########lyon.fr   */
+/*   Created: 2022/11/23 19:42:59 by TheTerror         #+#    #+#             */
+/*   Updated: 2023/05/09 16:36:12 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include  "../libft.h"
+#include "../libft.h"
 
-t_list	*ft_lstnew(void *content)
+void	ft_putnbr_fd(int n, int fd)
 {
-	t_list	*list;
+	int		div;
+	char	mod;
 
-	list = malloc(sizeof(t_list));
-	if (list)
+	if (n == -2147483648)
+		write(fd, "-2147483648", 11);
+	else
 	{
-		list->content = content;
-		list->next = NULL;
+		if (n < 0)
+		{
+			write(fd, "-", 1);
+			n *= -1;
+		}
+		mod = (n % 10) + 48;
+		div = n / 10;
+		if (div != 0)
+			ft_putnbr_fd(div, fd);
+		write(fd, &mod, 1);
 	}
-	return (list);
 }
