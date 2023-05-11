@@ -6,7 +6,7 @@
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 13:35:39 by TheTerror         #+#    #+#             */
-/*   Updated: 2023/04/20 17:30:05 by TheTerror        ###   ########lyon.fr   */
+/*   Updated: 2023/05/10 22:52:10 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include<unistd.h>
 # include<stdlib.h>
+# include "./get_next_line/get_next_line.h"
+# include "./ft_printf/ft_printf.h"
 
 typedef struct s_list	t_list;
 

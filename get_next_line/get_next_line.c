@@ -6,7 +6,7 @@
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 19:50:35 by TheTerror         #+#    #+#             */
-/*   Updated: 2023/01/06 17:16:52 by TheTerror        ###   ########lyon.fr   */
+/*   Updated: 2023/05/11 17:05:42 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ char	*ft_op_cat(char **line, char *buf, int len_buf)
 		newline = ft_lloc(len_buf + 1);
 	if (newline)
 	{
-		i = ft_append(newline, *line, len_line);
-		i += ft_append(&newline[i], buf, len_buf);
+		i = ft_gappend(newline, *line, len_line);
+		i += ft_gappend(&newline[i], buf, len_buf);
 		newline[i] = 0;
 		if (*line)
 			free(*line);

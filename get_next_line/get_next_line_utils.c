@@ -6,7 +6,7 @@
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 12:35:49 by TheTerror         #+#    #+#             */
-/*   Updated: 2023/01/05 16:05:31 by TheTerror        ###   ########lyon.fr   */
+/*   Updated: 2023/05/11 17:05:42 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	ft_size(char *str)
 	return (i);
 }
 
-int	ft_append(char *line, char *buf, int end_buf)
+int	ft_gappend(char *line, char *buf, int end_buf)
 {
 	int	i;
 
