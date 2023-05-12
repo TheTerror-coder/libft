@@ -6,7 +6,7 @@
 #    By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/10 15:29:29 by TheTerror         #+#    #+#              #
-#    Updated: 2023/05/12 02:11:38 by TheTerror        ###   ########lyon.fr    #
+#    Updated: 2023/05/12 02:22:36 by TheTerror        ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,20 +15,20 @@ PRINTF_LIB = $(PRINTF_PATH)libftprintf.a
 
 # FT_PRINTF PATHS
 
-PRINTF_PATH = ./ft_printf/
-PRINTF_SRCS_PATH = $(PRINTF_PATH)srcs/
+PRINTF_PATH = 		./ft_printf/
+PRINTF_SRCS_PATH = 	$(PRINTF_PATH)srcs/
 PRINTF_UTILS_PATH = $(PRINTF_PATH)utils/
 PRINTF_BONUS_PATH = $(PRINTF_PATH)bonus/
 
 # LIBFT PATHS
 
-CHAR_TOOLS_PATH = ./char_tools/
-GNL_PATH = ./get_next_line/
-LIST_TOOLS_PATH = ./list_tools/
-MEM_TOOLS_PATH = ./mem_tools/
-PRINT_TOOLS_PATH = ./print_tools/
-STR_TOOLS_PATH = ./str_tools/
-VARIOUS_PATH = ./various/
+CHAR_TOOLS_PATH = 	./char_tools/
+GNL_PATH = 			./get_next_line/
+LIST_TOOLS_PATH = 	./list_tools/
+MEM_TOOLS_PATH = 	./mem_tools/
+PRINT_TOOLS_PATH = 	./print_tools/
+STR_TOOLS_PATH = 	./str_tools/
+VARIOUS_PATH = 		./various/
 
 INCLUDE = 	libft.h $(GNL_PATH)get_next_line.h $(GNL_PATH)lget_next_line.h \
 			$(PRINTF_PATH)ft_printf.h $(PRINTF_PATH)ft_lprintf.h \
@@ -82,21 +82,22 @@ PRINTF_OBJ 	= 	$(PRINTF_SRC:.c=.o)
 all : $(NAME) $(PRINTF_LIB)
 
 $(PRINTF_OBJ) : %.o : %.c $(INCLUDE) $(OBJ)
-	$(CC) $(CFLAGS) -c -o $@ $<
+	@$(CC) $(CFLAGS) -c -o $@ $<
 
 $(OBJ) : %.o : %.c $(INCLUDE)
-	$(CC) -c $(CFLAGS) $< -o $@
+	@$(CC) -c $(CFLAGS) $< -o $@
 
 $(NAME) : $(OBJ) $(INCLUDE)
 	$(AR) $@ $^
+	@ranlib $(NAME)
 
 $(PRINTF_LIB) : $(PRINTF_OBJ) $(INCLUDE)
-	$(AR) $@ $^
-	$(AR) $(NAME) $@
-	ranlib $(NAME)
+	@$(AR) $@ $^
+	@$(AR) $(NAME) $@
+	@ranlib $(NAME)
 
 clean :
-	$(RM) $(OBJ) $(PRINTF_OBJ)
+	@$(RM) $(OBJ) $(PRINTF_OBJ)
 fclean : clean
-	$(RM) $(NAME) $(PRINTF_LIB)
+	@$(RM) $(NAME) $(PRINTF_LIB)
 re : fclean all
