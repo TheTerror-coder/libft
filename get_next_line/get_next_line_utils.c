@@ -6,12 +6,11 @@
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 12:35:49 by TheTerror         #+#    #+#             */
-/*   Updated: 2023/05/11 17:05:42 by TheTerror        ###   ########lyon.fr   */
+/*   Updated: 2023/05/12 02:10:45 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
-#include<stdio.h>
+#include "lget_next_line.h"
 
 char	*ft_lloc(int len)
 {

@@ -6,7 +6,7 @@
 #    By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/10 15:29:29 by TheTerror         #+#    #+#              #
-#    Updated: 2023/05/11 23:54:12 by TheTerror        ###   ########lyon.fr    #
+#    Updated: 2023/05/12 02:11:38 by TheTerror        ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,8 @@ PRINT_TOOLS_PATH = ./print_tools/
 STR_TOOLS_PATH = ./str_tools/
 VARIOUS_PATH = ./various/
 
-INCLUDE = 	libft.h $(GNL_PATH)get_next_line.h $(PRINTF_PATH)ft_printf.h \
+INCLUDE = 	libft.h $(GNL_PATH)get_next_line.h $(GNL_PATH)lget_next_line.h \
+			$(PRINTF_PATH)ft_printf.h $(PRINTF_PATH)ft_lprintf.h \
 			$(PRINTF_PATH)ft_preprcss.h $(PRINTF_SRCS_PATH)ft_srcs.h \
 			$(PRINTF_UTILS_PATH)ft_utils.h $(PRINTF_BONUS_PATH)ft_bonus.h
 

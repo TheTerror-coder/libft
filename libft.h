@@ -6,7 +6,7 @@
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 13:35:39 by TheTerror         #+#    #+#             */
-/*   Updated: 2023/05/10 22:52:10 by TheTerror        ###   ########lyon.fr   */
+/*   Updated: 2023/05/12 01:54:17 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,12 @@ struct s_list
 	void	*content;
 	t_list	*next;
 };
+
+typedef enum e_bool
+{
+	__FALSE = 0,
+	__TRUE = 1
+}				t_bool;
 
 int				ft_atoi(const char *nptr);
 void			ft_bzero(void *s, unsigned int n);

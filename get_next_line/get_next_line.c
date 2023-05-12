@@ -6,12 +6,11 @@
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 19:50:35 by TheTerror         #+#    #+#             */
-/*   Updated: 2023/05/11 17:05:42 by TheTerror        ###   ########lyon.fr   */
+/*   Updated: 2023/05/12 02:10:19 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
-#include<stdio.h>
+#include "lget_next_line.h"
 
 char	*ft_op_cat(char **line, char *buf, int len_buf)
 {

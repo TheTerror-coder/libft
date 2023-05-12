@@ -6,19 +6,19 @@
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 15:17:56 by TheTerror         #+#    #+#             */
-/*   Updated: 2023/03/31 15:16:09 by TheTerror        ###   ########lyon.fr   */
+/*   Updated: 2023/05/12 02:03:33 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_srcs.h"
 
-t_bool	ft_adr_op(t_vars *v, unsigned long long int n)
+t_bool__	ft_adr_op(t_vars *v, unsigned long long int n)
 {
-	unsigned long long int	div;
-	unsigned int			mod;
-	t_bool					fdbk;
+	unsigned long long int		div;
+	unsigned int				mod;
+	t_bool__					fdbk;
 
-	fdbk = __TRUE;
+	fdbk = _TRUE_;
 	div = n / 16;
 	mod = n % 16;
 	if (div != 0)
@@ -28,16 +28,16 @@ t_bool	ft_adr_op(t_vars *v, unsigned long long int n)
 	return (fdbk);
 }
 
-t_bool	ft_print_adr(t_vars *v, unsigned long long int n)
+t_bool__	ft_print_adr(t_vars *v, unsigned long long int n)
 {
-	t_bool	fdbk;
+	t_bool__	fdbk;
 
-	fdbk = __TRUE;
+	fdbk = _TRUE_;
 	if (!n)
 	{
 		ft_putstr_fd("(nil)", 1);
 		v->len += 5;
-		return (__TRUE);
+		return (_TRUE_);
 	}
 	if (!v->_dot)
 	{
@@ -48,16 +48,16 @@ t_bool	ft_print_adr(t_vars *v, unsigned long long int n)
 	return (fdbk);
 }
 
-t_bool	ft_op_adr(t_vars *v, unsigned long long int n)
+t_bool__	ft_op_adr(t_vars *v, unsigned long long int n)
 {
-	t_bool	fdbk;
-	int		len;
+	t_bool__	fdbk;
+	int			len;
 
 	if (v->_dot)
 		len = v->precision - ft_hexlen(n);
 	else
 		len = v->width - ft_hexlen(n) - 2;
-	fdbk = __TRUE;
+	fdbk = _TRUE_;
 	if (!n)
 		len -= 2;
 	if (n && v->_dot)
