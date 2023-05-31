@@ -6,7 +6,7 @@
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 13:35:39 by TheTerror         #+#    #+#             */
-/*   Updated: 2023/05/12 01:54:17 by TheTerror        ###   ########lyon.fr   */
+/*   Updated: 2023/05/31 14:48:29 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,11 @@
 # include "./get_next_line/get_next_line.h"
 # include "./ft_printf/ft_printf.h"
 
+# define __INT_MIN -2147483648
+# define __INT_MAX 2147483647
+
 typedef struct s_list	t_list;
+typedef enum e_assert	t_assert;
 
 struct s_list
 {
@@ -31,6 +35,13 @@ typedef enum e_bool
 	__FALSE = 0,
 	__TRUE = 1
 }				t_bool;
+
+enum e_assert
+{
+	INFERIOR = -2,
+	EQUAL = 1,
+	SUPERIOR = 2
+};
 
 int				ft_atoi(const char *nptr);
 void			ft_bzero(void *s, unsigned int n);
