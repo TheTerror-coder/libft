@@ -6,7 +6,7 @@
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 13:35:39 by TheTerror         #+#    #+#             */
-/*   Updated: 2023/07/26 14:46:21 by TheTerror        ###   ########lyon.fr   */
+/*   Updated: 2023/07/26 15:35:26 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -296,6 +296,23 @@ void			ft_putstr_fd(char *s, int fd);
 **		NULL if the allocation fails.
 */
 char			**ft_split(char const *s, char c);
+
+/*
+**ft_splitwset
+**
+**	PARAMETERS
+**		s: The string to be split.
+**		set: The set of delimiting characters.
+**	DESCRIPTION
+**		Allocates (with malloc(3)) and returns an array
+**		of strings obtained by splitting ’s’ using the set of
+**		characters in ’set’ as a delimiters. The array must be
+**		ended by a NULL pointer.
+**	RETURN VALUE
+**		The array of new strings resulting from the split.
+**		NULL if the allocation fails.
+*/
+char			**ft_splitwset(char const *s, char *set);
 
 /*
 **ft_strchr -- locate character in string
