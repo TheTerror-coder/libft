@@ -6,13 +6,13 @@
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 15:25:51 by TheTerror         #+#    #+#             */
-/*   Updated: 2023/07/26 15:31:56 by TheTerror        ###   ########lyon.fr   */
+/*   Updated: 2023/07/26 15:46:42 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-unsigned int	ft_count_row(const char *s, char *set)
+unsigned int	ft_count_rowwset(const char *s, char *set)
 {
 	unsigned int	i;
 	unsigned int	nbrow;
@@ -33,7 +33,7 @@ unsigned int	ft_count_row(const char *s, char *set)
 	return (nbrow);
 }
 
-unsigned int	ft_count_col(const char *s, char *set)
+unsigned int	ft_count_colwset(const char *s, char *set)
 {
 	unsigned int	i;
 
@@ -43,7 +43,7 @@ unsigned int	ft_count_col(const char *s, char *set)
 	return (i);
 }
 
-void	ft_free(char **arr, unsigned int ix)
+void	ft_freewset(char **arr, unsigned int ix)
 {
 	while (ix > 0)
 	{
@@ -54,7 +54,7 @@ void	ft_free(char **arr, unsigned int ix)
 	free(arr);
 }
 
-int	ft_fill(char const *s, char **sstr, char *set)
+int	ft_fillwset(char const *s, char **sstr, char *set)
 {
 	unsigned int	i;
 	unsigned int	ix;
@@ -66,13 +66,13 @@ int	ft_fill(char const *s, char **sstr, char *set)
 	{
 		while (ft_strchr(set, s[i]))
 			i++;
-		len = ft_count_col(&s[i], set);
+		len = ft_count_colwset(&s[i], set);
 		if (s[i])
 		{
 			sstr[ix] = ft_substr(s, i, len);
 			if (!sstr[ix])
 			{
-				ft_free(sstr, ix);
+				ft_freewset(sstr, ix);
 				return (0);
 			}	
 			ix++;
@@ -88,11 +88,11 @@ char	**ft_splitwset(char const *s, char *set)
 	unsigned int	len;
 	char			**sstr;
 
-	len = ft_count_row(s, set);
+	len = ft_count_rowwset(s, set);
 	sstr = malloc(sizeof(char *) * (len + 1));
 	if (!sstr)
 		return (NULL);
-	if (!ft_fill(s, sstr, set))
+	if (!ft_fillwset(s, sstr, set))
 		return (0);
 	return (sstr);
 }
