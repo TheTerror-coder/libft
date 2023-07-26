@@ -6,7 +6,7 @@
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 13:35:39 by TheTerror         #+#    #+#             */
-/*   Updated: 2023/07/10 16:32:48 by TheTerror        ###   ########lyon.fr   */
+/*   Updated: 2023/07/26 14:46:21 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -716,12 +716,37 @@ t_list			*ft_lstnew(void *content);
 int				ft_lstsize(t_list *lst);
 
 /*
-**ft_freesplit
+**ft_freestr
 **
+**	PARAMETERS
+**		str: address of the pointer to the memory to free.
 **	DESCRIPTION
-**		free a double pointer of type char so specificly
-**		the pointer returned by ft_split()
+**		free a string pointer (type char*) and reset it to NULL.
+*/
+void			ft_freestr(char **str);
+
+/*
+**ft_freesplit
+***Deprecated** - This function does not actually reset to NULL
+**				the pointer **str after freeing it.
+**				Please use ft_free2str().
+**	PARAMETERS
+**		str: the pointer to free.
+**	DESCRIPTION
+**		free a double pointer (type char**) so specificly
+**		the pointer returned by ft_split().
 */
 void			ft_freesplit(char **str);
+
+/*
+**ft_free2str
+**
+**	PARAMETERS
+**		str: address of the pointer to the memory to free.
+**	DESCRIPTION
+**		free a double pointer (type char**) so specificly
+**		the pointer returned by ft_split() and reset it to NULL.
+*/
+void			ft_free2str(char ***str);
 
 #endif

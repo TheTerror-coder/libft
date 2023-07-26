@@ -6,7 +6,7 @@
 #    By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/10 15:29:29 by TheTerror         #+#    #+#              #
-#    Updated: 2023/05/12 02:22:36 by TheTerror        ###   ########lyon.fr    #
+#    Updated: 2023/07/26 14:36:55 by TheTerror        ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,7 +58,7 @@ SRC_GNL = 			$(addprefix $(GNL_PATH), get_next_line.c get_next_line_utils.c)
 SRC_CHAR_TOOLS =	$(addprefix $(CHAR_TOOLS_PATH), ft_isalpha.c ft_isdigit.c ft_isalnum.c \
 					ft_isascii.c ft_isprint.c ft_toupper.c ft_tolower.c)
 SRC_MEM_TOOLS =		$(addprefix $(MEM_TOOLS_PATH), ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c \
-					ft_memchr.c ft_memcmp.c ft_calloc.c ft_freesplit.c)
+					ft_memchr.c ft_memcmp.c ft_calloc.c ft_free2str.c ft_freestr.c)
 SRC_PRINT_TOOLS = 	$(addprefix $(PRINT_TOOLS_PATH), ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c)
 SRC_STR_TOOLS =		$(addprefix $(STR_TOOLS_PATH), ft_strlen.c ft_strlcpy.c ft_strlcat.c  ft_strchr.c \
 					ft_strrchr.c ft_strncmp.c ft_strdup.c ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c \
