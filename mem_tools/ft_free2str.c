@@ -6,7 +6,7 @@
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 17:23:29 by TheTerror         #+#    #+#             */
-/*   Updated: 2023/07/26 14:22:24 by TheTerror        ###   ########lyon.fr   */
+/*   Updated: 2023/07/26 16:41:47 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,10 @@ void	ft_free2str(char ***str)
 	i = 0;
 	if (!*str)
 		return ;
-	while (*str[i])
+	while (str[0][i])
 	{
-		free(*str[i]);
-		*str[i] = NULL;
+		free(str[0][i]);
+		str[0][i] = NULL;
 		i++;
 	}
 	free(*str);
