@@ -6,7 +6,7 @@
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 15:25:51 by TheTerror         #+#    #+#             */
-/*   Updated: 2023/07/26 15:46:42 by TheTerror        ###   ########lyon.fr   */
+/*   Updated: 2023/07/26 17:01:07 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ unsigned int	ft_count_rowwset(const char *s, char *set)
 	nbrow = 0;
 	while (s[i])
 	{
-		while (ft_strchr(set, s[i]))
+		while (s[i] && ft_strchr(set, s[i]))
 			i++;
 		if (s[i])
 		{
@@ -64,7 +64,7 @@ int	ft_fillwset(char const *s, char **sstr, char *set)
 	ix = 0;
 	while (s[i])
 	{
-		while (ft_strchr(set, s[i]))
+		while (s[i] && ft_strchr(set, s[i]))
 			i++;
 		len = ft_count_colwset(&s[i], set);
 		if (s[i])
