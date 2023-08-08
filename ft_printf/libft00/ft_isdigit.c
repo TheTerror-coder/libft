@@ -1,26 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_put_spaces.c                                    :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/20 15:10:13 by TheTerror         #+#    #+#             */
-/*   Updated: 2023/03/31 15:15:52 by TheTerror        ###   ########lyon.fr   */
+/*   Created: 2022/11/10 16:20:44 by TheTerror         #+#    #+#             */
+/*   Updated: 2023/05/08 20:07:55 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_bonus.h"
+#include "libft00.h"
 
-t_bool	ft_put_spaces(t_vars *v, int len)
+int	ft_isdigit(int c)
 {
-	t_bool	fdbk;
-
-	fdbk = __TRUE;
-	while (fdbk && len > 0)
-	{
-		fdbk = ft_print_char(v, ' ');
-		len--;
-	}
-	return (fdbk);
+	if (c >= '0' && c <= '9')
+		return (1);
+	return (0);
 }

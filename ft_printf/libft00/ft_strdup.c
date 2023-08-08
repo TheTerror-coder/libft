@@ -1,26 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_put_spaces.c                                    :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/20 15:10:13 by TheTerror         #+#    #+#             */
-/*   Updated: 2023/03/31 15:15:52 by TheTerror        ###   ########lyon.fr   */
+/*   Created: 2022/11/18 14:20:16 by TheTerror         #+#    #+#             */
+/*   Updated: 2023/05/08 20:07:55 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_bonus.h"
+#include "libft00.h"
 
-t_bool	ft_put_spaces(t_vars *v, int len)
+char	*ft_strdup(const char *s)
 {
-	t_bool	fdbk;
+	unsigned int	len;
+	char			*s_dup;
 
-	fdbk = __TRUE;
-	while (fdbk && len > 0)
+	len = 0;
+	while (s[len])
+		len++;
+	s_dup = malloc(sizeof(char) * (len + 1));
+	if (!s_dup)
+		return (0);
+	len = 0;
+	while (s[len])
 	{
-		fdbk = ft_print_char(v, ' ');
-		len--;
+		s_dup[len] = s[len];
+		len++;
 	}
-	return (fdbk);
+	s_dup[len] = 0;
+	return (s_dup);
 }

@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_put_spaces.c                                    :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/20 15:10:13 by TheTerror         #+#    #+#             */
-/*   Updated: 2023/03/31 15:15:52 by TheTerror        ###   ########lyon.fr   */
+/*   Created: 2022/11/15 16:04:55 by TheTerror         #+#    #+#             */
+/*   Updated: 2023/05/08 20:07:55 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_bonus.h"
+#include "libft00.h"
 
-t_bool	ft_put_spaces(t_vars *v, int len)
+char	*ft_strrchr(const char *s, int c)
 {
-	t_bool	fdbk;
+	const char		*p;
+	unsigned int	i;
 
-	fdbk = __TRUE;
-	while (fdbk && len > 0)
+	i = 0;
+	p = 0;
+	while (s[i])
 	{
-		fdbk = ft_print_char(v, ' ');
-		len--;
+		if (s[i] == (unsigned char) c)
+			p = &s[i];
+		i++;
 	}
-	return (fdbk);
+	if (s[i] == (unsigned char) c)
+		p = &s[i];
+	return ((char *) p);
 }

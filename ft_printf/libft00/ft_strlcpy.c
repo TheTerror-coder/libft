@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_put_spaces.c                                    :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/20 15:10:13 by TheTerror         #+#    #+#             */
-/*   Updated: 2023/03/31 15:15:52 by TheTerror        ###   ########lyon.fr   */
+/*   Created: 2022/11/14 20:27:14 by TheTerror         #+#    #+#             */
+/*   Updated: 2023/05/08 20:07:55 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_bonus.h"
+#include "libft00.h"
 
-t_bool	ft_put_spaces(t_vars *v, int len)
+unsigned int	ft_strlcpy(char *dst, const char *src, unsigned int size)
 {
-	t_bool	fdbk;
+	unsigned int	lnsrc;
+	unsigned int	i;
 
-	fdbk = __TRUE;
-	while (fdbk && len > 0)
+	lnsrc = 0;
+	i = 0;
+	while (src[lnsrc])
+		lnsrc++;
+	if (!src || size < 1)
+		return (lnsrc);
+	while ((i < size - 1) && (i < lnsrc))
 	{
-		fdbk = ft_print_char(v, ' ');
-		len--;
+		dst[i] = src[i];
+		i++;
 	}
-	return (fdbk);
+	dst[i] = '\0';
+	return (lnsrc);
 }

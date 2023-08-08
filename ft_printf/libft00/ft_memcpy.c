@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_put_spaces.c                                    :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/20 15:10:13 by TheTerror         #+#    #+#             */
-/*   Updated: 2023/03/31 15:15:52 by TheTerror        ###   ########lyon.fr   */
+/*   Created: 2022/11/11 22:19:30 by TheTerror         #+#    #+#             */
+/*   Updated: 2023/05/08 20:07:55 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_bonus.h"
+#include "libft00.h"
 
-t_bool	ft_put_spaces(t_vars *v, int len)
+void	*ft_memcpy(void *dest, const void *src, unsigned int n)
 {
-	t_bool	fdbk;
+	unsigned int	i;
+	const char		*psrc;
+	char			*pdest;
 
-	fdbk = __TRUE;
-	while (fdbk && len > 0)
+	i = 0;
+	psrc = src;
+	pdest = dest;
+	if (!psrc && !pdest)
+		return ((void *) 0);
+	while (i < n)
 	{
-		fdbk = ft_print_char(v, ' ');
-		len--;
+		*(pdest + i) = *(psrc + i);
+		i++;
 	}
-	return (fdbk);
+	return ((void *) dest);
 }

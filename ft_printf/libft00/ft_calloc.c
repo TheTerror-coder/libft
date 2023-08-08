@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_put_spaces.c                                    :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/20 15:10:13 by TheTerror         #+#    #+#             */
-/*   Updated: 2023/03/31 15:15:52 by TheTerror        ###   ########lyon.fr   */
+/*   Created: 2022/11/18 13:15:28 by TheTerror         #+#    #+#             */
+/*   Updated: 2023/05/08 20:07:55 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_bonus.h"
+#include "libft00.h"
 
-t_bool	ft_put_spaces(t_vars *v, int len)
+void	*ft_calloc(unsigned int nmemb, unsigned int size)
 {
-	t_bool	fdbk;
+	void			*arr;
+	char			*p;
+	unsigned int	i;
 
-	fdbk = __TRUE;
-	while (fdbk && len > 0)
+	i = 0;
+	arr = malloc(nmemb * size);
+	p = arr;
+	if (!p)
+		return (0);
+	while (i < (nmemb * size))
 	{
-		fdbk = ft_print_char(v, ' ');
-		len--;
+		p[i] = 0;
+		i++;
 	}
-	return (fdbk);
+	return (arr);
 }

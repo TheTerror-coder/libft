@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_put_spaces.c                                    :+:      :+:    :+:   */
+/*   ft_local.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/20 15:10:13 by TheTerror         #+#    #+#             */
-/*   Updated: 2023/03/31 15:15:52 by TheTerror        ###   ########lyon.fr   */
+/*   Created: 2023/08/07 23:10:28 by TheTerror         #+#    #+#             */
+/*   Updated: 2023/08/07 23:15:47 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_bonus.h"
+#ifndef FT_LOCAL_H
+# define FT_LOCAL_H
 
-t_bool	ft_put_spaces(t_vars *v, int len)
-{
-	t_bool	fdbk;
+# include "ft_preprcss.h"
+# include "ft_printf.h"
+# include "libft00/libft00.h"
+# include "./srcs/ft_srcs.h"
+# include "./utils/ft_utils.h"
+# include "./bonus/ft_bonus.h"
 
-	fdbk = __TRUE;
-	while (fdbk && len > 0)
-	{
-		fdbk = ft_print_char(v, ' ');
-		len--;
-	}
-	return (fdbk);
-}
+#endif

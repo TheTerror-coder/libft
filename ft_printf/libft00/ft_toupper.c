@@ -1,26 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_put_spaces.c                                    :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/20 15:10:13 by TheTerror         #+#    #+#             */
-/*   Updated: 2023/03/31 15:15:52 by TheTerror        ###   ########lyon.fr   */
+/*   Created: 2022/11/14 22:31:35 by TheTerror         #+#    #+#             */
+/*   Updated: 2023/05/08 20:13:36 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_bonus.h"
+#include "libft00.h"
 
-t_bool	ft_put_spaces(t_vars *v, int len)
+int	ft_toupper(int c)
 {
-	t_bool	fdbk;
-
-	fdbk = __TRUE;
-	while (fdbk && len > 0)
-	{
-		fdbk = ft_print_char(v, ' ');
-		len--;
-	}
-	return (fdbk);
+	if (c >= 'a' && c <= 'z')
+		return (c - 32);
+	return (c);
 }

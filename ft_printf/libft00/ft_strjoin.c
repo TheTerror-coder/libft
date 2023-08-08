@@ -1,26 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_put_spaces.c                                    :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/20 15:10:13 by TheTerror         #+#    #+#             */
-/*   Updated: 2023/03/31 15:15:52 by TheTerror        ###   ########lyon.fr   */
+/*   Created: 2022/11/21 13:11:45 by TheTerror         #+#    #+#             */
+/*   Updated: 2023/05/08 20:07:55 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_bonus.h"
+#include "libft00.h"
 
-t_bool	ft_put_spaces(t_vars *v, int len)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	t_bool	fdbk;
+	unsigned int	len1;
+	unsigned int	len2;
+	char			*str;
 
-	fdbk = __TRUE;
-	while (fdbk && len > 0)
+	len1 = ft_strlen(s1);
+	len2 = ft_strlen(s2);
+	str = malloc(sizeof(char) * (len1 + len2 + 1));
+	if (!str)
+		return (0);
+	len1 = 0;
+	len2 = 0;
+	while (s1[len1])
 	{
-		fdbk = ft_print_char(v, ' ');
-		len--;
+		str[len1] = s1[len1];
+		len1++;
 	}
-	return (fdbk);
+	while (s2[len2])
+	{
+		str[len1] = s2[len2];
+		len1++;
+		len2++;
+	}
+	str[len1] = 0;
+	return (str);
 }

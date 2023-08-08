@@ -1,40 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_preprcss.h                                      :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/18 17:26:11 by TheTerror         #+#    #+#             */
-/*   Updated: 2023/03/31 15:16:37 by TheTerror        ###   ########lyon.fr   */
+/*   Created: 2022/11/17 19:58:18 by TheTerror         #+#    #+#             */
+/*   Updated: 2023/05/08 20:07:55 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PREPRCSS_H
-# define FT_PREPRCSS_H
+#include "libft00.h"
 
-# include<stdarg.h>
-
-typedef enum e_bool
-{
-	__FALSE = 0,
-	__TRUE = -111111
-}				t_bool;
-
-typedef struct s_vars
+char	*ft_strnstr(const char *s1, const char *s2, unsigned int len)
 {
 	unsigned int	i;
-	int				len;
-	const char		*fmt;
-	int				width;
-	int				precision;
-	t_bool			_noflag;
-	t_bool			_minus;
-	t_bool			_zero;
-	t_bool			_dot;
-	t_bool			_sharp;
-	t_bool			_space;
-	t_bool			_plus;
-}				t_vars;
+	unsigned int	j;
 
-#endif
+	i = 0;
+	if (!s2[i])
+		return ((char *) s1);
+	while (i < len && s1[i] != 0)
+	{
+		j = 0;
+		if (s1[i] == s2[j])
+		{
+			while (s2[j] != 0 && i < len && (s1[i] == s2[j]))
+			{
+				i++;
+				j++;
+			}
+			if (s2[j] == '\0')
+				return ((char *) &s1[i - j]);
+			i -= (j - 1);
+		}
+		else
+			i++;
+	}
+	return (0);
+}

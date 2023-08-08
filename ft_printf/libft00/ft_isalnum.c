@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_put_spaces.c                                    :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/20 15:10:13 by TheTerror         #+#    #+#             */
-/*   Updated: 2023/03/31 15:15:52 by TheTerror        ###   ########lyon.fr   */
+/*   Created: 2022/11/10 18:37:45 by TheTerror         #+#    #+#             */
+/*   Updated: 2023/05/08 20:07:55 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_bonus.h"
+#include "libft00.h"
 
-t_bool	ft_put_spaces(t_vars *v, int len)
+int	ft_isalnum(int c)
 {
-	t_bool	fdbk;
-
-	fdbk = __TRUE;
-	while (fdbk && len > 0)
+	if (c >= 0 && c <= 255)
 	{
-		fdbk = ft_print_char(v, ' ');
-		len--;
+		if (c > 47 && c < 58)
+			return (1);
+		if (c > 64 && c < 91)
+			return (2);
+		if (c > 96 && c < 123)
+			return (4);
 	}
-	return (fdbk);
+	return (0);
 }

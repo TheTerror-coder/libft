@@ -1,26 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_put_spaces.c                                    :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/20 15:10:13 by TheTerror         #+#    #+#             */
-/*   Updated: 2023/03/31 15:15:52 by TheTerror        ###   ########lyon.fr   */
+/*   Created: 2022/11/15 21:25:08 by TheTerror         #+#    #+#             */
+/*   Updated: 2023/05/08 20:07:55 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_bonus.h"
+#include "libft00.h"
 
-t_bool	ft_put_spaces(t_vars *v, int len)
+int	ft_strncmp(const char *s1, const char *s2, unsigned int n)
 {
-	t_bool	fdbk;
+	unsigned int		i;
+	int					feed;
 
-	fdbk = __TRUE;
-	while (fdbk && len > 0)
+	i = 0;
+	feed = 0;
+	if (!s1[i] && !s2[i])
+		return (feed);
+	while (i < n)
 	{
-		fdbk = ft_print_char(v, ' ');
-		len--;
+		if (!s1[i] && !s2[i])
+			return (feed);
+		feed = (unsigned char) s1[i] - (unsigned char) s2[i];
+		if (feed != 0)
+			return (feed);
+		i++;
 	}
-	return (fdbk);
+	return (feed);
 }
