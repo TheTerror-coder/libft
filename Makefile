@@ -6,7 +6,7 @@
 #    By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/10 15:29:29 by TheTerror         #+#    #+#              #
-#    Updated: 2023/08/07 23:58:58 by TheTerror        ###   ########lyon.fr    #
+#    Updated: 2023/08/11 12:13:12 by TheTerror        ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -76,9 +76,9 @@ make_printf :
 	make -C $(PRINTF_PATH)
 
 clean :
-	make clean -C $(PRINTF_PATH)
+	@make clean -C $(PRINTF_PATH)
 	@$(RM) $(OBJ) $(PRINTF_OBJ)
 fclean : clean
-	make fclean -C $(PRINTF_PATH)
+	@make fclean -C $(PRINTF_PATH)
 	@$(RM) $(NAME) $(PRINTF_LIB)
 re : fclean all

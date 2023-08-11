@@ -6,7 +6,7 @@
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 23:10:28 by TheTerror         #+#    #+#             */
-/*   Updated: 2023/08/07 23:15:47 by TheTerror        ###   ########lyon.fr   */
+/*   Updated: 2023/08/11 12:20:14 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define FT_LOCAL_H
 
 # include "ft_preprcss.h"
-# include "ft_printf.h"
 # include "libft00/libft00.h"
 # include "./srcs/ft_srcs.h"
 # include "./utils/ft_utils.h"

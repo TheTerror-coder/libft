@@ -6,7 +6,7 @@
 #    By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/20 18:02:59 by TheTerror         #+#    #+#              #
-#    Updated: 2023/08/07 23:16:56 by TheTerror        ###   ########lyon.fr    #
+#    Updated: 2023/08/11 12:16:34 by TheTerror        ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,23 +35,23 @@ OBJ =	$(SRC:.c=.o)
 all : make_libft $(NAME)
 
 %.o : %.c $(INCLUDE) $(LIBFT_PATH)$(LIBFT00_A)
-	$(CC) $(CFLAGS) -c -o $@ $<
+	@$(CC) $(CFLAGS) -c -o $@ $<
 
 make_libft :
-	make -C $(LIBFT_PATH)
+	@make -C $(LIBFT_PATH)
 
 bonus : $(OBJ) $(INCLUDE)
 
 $(NAME) : $(OBJ) $(INCLUDE)
-	cp $(LIBFT_PATH)$(LIBFT00_A) .
-	mv $(LIBFT00_A) $(NAME)
+	@cp $(LIBFT_PATH)$(LIBFT00_A) .
+	@mv $(LIBFT00_A) $(NAME)
 	$(AR) $@ $^
-	ranlib $(NAME)
+	@ranlib $(NAME)
 
 clean :
-	make clean -C $(LIBFT_PATH)
-	$(RM) $(OBJ)
+	@make clean -C $(LIBFT_PATH)
+	@$(RM) $(OBJ)
 fclean : clean
-	make fclean -C $(LIBFT_PATH)
-	$(RM) $(NAME)
+	@make fclean -C $(LIBFT_PATH)
+	@$(RM) $(NAME)
 re : fclean all
