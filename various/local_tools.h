@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   include.h                                          :+:      :+:    :+:   */
+/*   local_tools.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 14:06:01 by TheTerror         #+#    #+#             */
-/*   Updated: 2024/02/13 14:07:28 by TheTerror        ###   ########lyon.fr   */
+/*   Updated: 2024/02/13 14:34:21 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#ifndef LOCAL_TOOLS_H
+# define LOCAL_TOOLS_H
+
+# include "../libft.h"
 
 /*
-	ft_atod() struct tool
+	ft_atod() struct including all util variables
 */
-typedef struct s_tools
+typedef struct s_atod_variables
 {
 	unsigned int		i;
 	int					sign;
@@ -23,4 +26,6 @@ typedef struct s_tools
 	double				val;
 	double				exp_sign;
 	double				n;
-}				t_tools;
+}				t_atod_vars;
+
+#endif
