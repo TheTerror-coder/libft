@@ -6,21 +6,11 @@
 /*   By: TheTerror <jfaye@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 21:19:02 by TheTerror         #+#    #+#             */
-/*   Updated: 2024/02/12 18:01:43 by TheTerror        ###   ########lyon.fr   */
+/*   Updated: 2024/02/13 14:07:40 by TheTerror        ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
-
-typedef struct s_tools
-{
-	unsigned int		i;
-	int					sign;
-	double				dec;
-	double				val;
-	double				exp_sign;
-	double				n;
-}				t_tools;
+#include "include.h"
 
 t_bool	init_skip_optional(t_tools *x, const char *nptr);
 t_bool	decimal_sequence(t_tools *x, const char *nptr);
